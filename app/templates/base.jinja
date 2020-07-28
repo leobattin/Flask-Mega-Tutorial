@@ -24,6 +24,9 @@
                 </li>
                 {% else %}
                 <li class="nav-item">
+                    <a href="{{ url_for('user', username=current_user.username) }}" class="nav-link">Profile</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
                 </li>
                 {% endif %}
@@ -38,7 +41,7 @@
         </ul>
         {% endif %}
         {% endwith %}
-        <div class=container>
+        <div class=container style="padding-top: 5px">
             {% block content %}{% endblock %}
         </div>
 

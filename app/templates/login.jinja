@@ -9,14 +9,14 @@
             {{ form.username(size=32, class="form-control") }}
         </div>
         {% for error in form.username.errors %}
-            <div class="alert alert-danger">{{error}}</div>
+            <div class="alert alert-danger">{{ error }}</div>
         {% endfor %}
         <div class="form-group">
             {{ form.password.label }}
             {{ form.password(size=32, class="form-control") }}
         </div>
         {% for error in form.password.errors %}
-            <div class="alert alert-danger">{{error}}</div>
+            <div class="alert alert-danger">{{ error }}</div>
         {% endfor %}
         <div class="form-group form-check">
             {{ form.remember_me(class="form-check-input") }}
@@ -25,5 +25,5 @@
         {{ form.submit(class="btn btn-primary") }}
     </form>
 
-    <p>New user ? <a href="{{ url_for('register') }}">Click to register !</a></p>
+    <p>New user ? <a href="{{ url_for('register') }}">Click to register!</a></p>
 {% endblock %}

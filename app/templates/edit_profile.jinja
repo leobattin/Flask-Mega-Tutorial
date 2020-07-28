@@ -1,0 +1,25 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+    <h1>Edit Profile</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.username.label }}
+            {{ form.username(size=32, class="form-control") }}
+        </div>
+        {% for error in form.username.error %}
+            <div class="alert alert-danger">{{ error }}</div>
+        {% endfor %}
+
+        <div class="form-group">
+            {{ form.about_me.label }}
+            {{ form.about_me(cols=50, rows=4, class="form-control") }}
+        </div>
+        {% for error in form.about_me.errors %}
+            <div class="alert alert-danger">{{ error }}</div>
+        {% endfor %}
+
+        {{ form.submit(class="btn btn-primary") }}
+    </form>
+{% endblock content %}
